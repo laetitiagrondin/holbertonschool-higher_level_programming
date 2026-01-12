@@ -10,5 +10,5 @@ and follow the PEP8 coding style guidelines.*
 - *Python 3.8*
 - *pydecodestyle 2.7.*
 
-##Author
+## Author
 *Laetitia GRONDIN*
