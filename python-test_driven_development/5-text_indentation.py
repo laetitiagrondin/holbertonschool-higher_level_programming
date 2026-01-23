@@ -17,6 +17,12 @@ def text_indentation(text):
         "text must be a string".
     - There should be no space at the beginning
     or at the end of each printed line
+
+    Parameters:
+    - text: the string which is the text to be printed
+
+    Returns:
+    - This function does not return.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
