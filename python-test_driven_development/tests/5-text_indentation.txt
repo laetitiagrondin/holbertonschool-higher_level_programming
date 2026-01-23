@@ -5,7 +5,6 @@ Holberton School
 Holberton.
 <BLANKLINE>
 School
-<BLANKLINE>
 
 >>> text_indentation("Holberton. School? How are you: John")
 Holberton.
