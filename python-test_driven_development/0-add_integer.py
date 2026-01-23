@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Module that provides a function to add two integers."
+"""
 def add_integer(a, b=98):
     """
     Function Description:
