@@ -11,7 +11,7 @@ def say_my_name(first_name, last_name=""):
     - Prototype: def say_my_name(first_name, last_name="").
     - first_name and last_name must be strings, otherwise,
         raise a TypeError exception with the message:
-        "first_name muste be a string" or "last_name must be a string".
+        "first_name must be a string" or "last_name must be a string".
 
     Parameters:
     - first_name: a string and the first name of the person.
@@ -25,4 +25,4 @@ def say_my_name(first_name, last_name=""):
 
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
-    print("My name is {} {}".format(first_name, last_name))
+    print("My name is {} {}".format(first_name, last_name).strip())
