@@ -3,15 +3,15 @@
 Holberton School
 >>> text_indentation("Holberton.School")
 Holberton.
-$
+
 School
 >>> text_indentation("Holberton. School? How are you: John")
 Holberton.
-$
+
 School?
-$
+
 How are you:
-$
+
 John
 >>> text_indentation(12)
 Traceback (most recent call last):
