@@ -37,5 +37,11 @@ TypeError: a must be an integer
 0
 >>> add_integer(-999999, -1)
 -1000000
->>> add_integer(1e5, 1e5)
-200000
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(7, float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
