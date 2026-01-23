@@ -6,6 +6,7 @@ Holberton.
 <BLANKLINE>
 School
 <BLANKLINE>
+
 >>> text_indentation("Holberton. School? How are you: John")
 Holberton.
 <BLANKLINE>
@@ -14,6 +15,7 @@ School?
 How are you:
 <BLANKLINE>
 John
+
 >>> text_indentation(12)
 Traceback (most recent call last):
     ...
