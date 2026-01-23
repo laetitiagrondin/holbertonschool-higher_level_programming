@@ -12,7 +12,7 @@
 >>> add_integer(1.5, 2.5)
 3
 >>> add_integer(-9, 2.1)
-7
+-7
 >>> add_integer("1", 2)
 Traceback (most recent call last):
     ...
