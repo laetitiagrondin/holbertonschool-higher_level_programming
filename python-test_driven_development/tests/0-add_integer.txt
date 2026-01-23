@@ -37,3 +37,8 @@ TypeError: a must be an integer
 0
 >>> add_integer(-999999, -1)
 -1000000
+>>> add_integer(1e308, 1e308)
+inf
+
+>>> add_integer(1e308, 1e308)
+20000000000000000...
