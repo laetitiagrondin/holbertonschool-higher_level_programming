@@ -67,7 +67,7 @@ class Square:
     def position(self, value):
         """
         Function Description:
-        - Validates that 'tuple' is a tuple of 2 positive integers, otherwise:j
+        - Validates that 'tuple' is a tuple of 2 positive integers, otherwise:
             - Raises a TypeError exception with the message:
                 "position must be a tuple of 2 positive integers".
 
