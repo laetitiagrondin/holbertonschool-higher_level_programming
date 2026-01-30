@@ -122,8 +122,8 @@ class Rectangle:
         Function Description:
         - Returns a string representation of the rectangle that can be
           used to recreate a new instance using eval().
-        
+
         Returns:
         - A string representation of the rectangle.
         """
-        return f"Rectangle({self.width}, {self.height})"
+        return "Rectangle({}, {})".format(self.width, self.height)
