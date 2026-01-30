@@ -114,5 +114,5 @@ class Rectangle:
         - A string representation of the rectangle.
         """
         if self.width == 0 or self.height == 0:
-            print("")
+            return ""
         return "\n".join(["#" * self.width] * self.height)
