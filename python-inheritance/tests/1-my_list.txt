@@ -20,6 +20,6 @@
 >>> my_list = MyList([-1, 7, -3])
 >>> my_list.print_sorted()
 [-3, -1, 7]
->>> my_list = my_list([1.5, 0.2, 3.7])
+>>> my_list = MyList([1, 2, 3, 3, 2, 3])
 >>> my_list.print_sorted()
-[0.2, 1.5, 3.7]
+[1, 2, 2, 3, 3, 3]
