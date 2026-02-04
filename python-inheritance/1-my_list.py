@@ -5,7 +5,6 @@ Defines a class MyList.
 
 
 class MyList(list):
-    pass
     """
     A class MyList that inherits from list.
     """
