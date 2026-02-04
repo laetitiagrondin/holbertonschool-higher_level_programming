@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a class My_List.
+Defines a class MyList.
 """
 
 
