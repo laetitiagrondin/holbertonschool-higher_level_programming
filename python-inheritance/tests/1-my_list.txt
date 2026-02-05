@@ -26,3 +26,7 @@
 >>> my_list = MyList([5, -7, -10000000000, 10000000000])
 >>> my_list.print_sorted()
 [-10000000000, -7, 5, 10000000000]
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'NoneType' object is not iterable
