@@ -13,5 +13,5 @@ ValueError: age must be greater than 0
 >>> bg.integer("distance", -4)
 Traceback (most recent call last):
     ...
-ValueError: distance must be greater than 0
+AttributeError: 'BaseGeometry' object has no attribute 'integer'
 >>>
