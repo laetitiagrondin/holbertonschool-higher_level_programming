@@ -45,10 +45,10 @@ Traceback (most recent call last):
     ...
 TypeError: set must be an integer
 
->>> bg.integer_validator("width", None)
+>>> bg.integer_validator("value", None)
 Traceback (most recent call last):
     ...
-TypeError: width must be an integer
+TypeError: value must be an integer
 
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
