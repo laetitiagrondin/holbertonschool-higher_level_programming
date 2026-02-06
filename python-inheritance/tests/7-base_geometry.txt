@@ -40,6 +40,11 @@ Traceback (most recent call last):
     ...
 TypeError: set must be an integer
 
+>>> bg.integer_validator("byte", b"abc")
+Traceback (most recent call last):
+    ...
+TypeError: byte must be an integer
+
 >>> bg.integer_validator("bytearrays", bytearray(b"bytes"))
 Traceback (most recent call last):
     ...
