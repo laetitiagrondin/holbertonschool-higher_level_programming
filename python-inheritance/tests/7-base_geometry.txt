@@ -5,6 +5,16 @@
 
 >>> bg.integer_validator("my_int", 89)
 
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> bg.area(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
     ...
@@ -71,8 +81,3 @@ ValueError: distance must be greater than 0
 Traceback (most recent call last):
     ...
 ValueError: float must be greater than 0
-
->>> bg.area()
-Traceback (most recent call last):
-    ...
-Exception: area() is not implemented
