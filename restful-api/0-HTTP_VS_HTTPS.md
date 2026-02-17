@@ -15,6 +15,7 @@
 ## 1.3 Comparaison des connexions HTTP et HTTPS
 
 | Protocole | Acteur | Type de connexion    | Description                    |
+|-----------|--------|----------------------|--------------------------------|
 | http://   | User   | Insecure Connection  | Normal HTTP                    |
 | https://  | User   | Encrypted Connection | Secure HTTPS (SSL Certificate) |
 
@@ -52,6 +53,7 @@ DELETE : Supprime une ressource donnée.
 ## 3.2 Codes de status
 
 | Status code    | Nom                       | Description                        |
+|----------------|---------------------------|------------------------------------|
 | 200            | OK                        | Succès.                            |
 | 201            | Created                   | Création d'une nouvelle ressource. |
 | 301            | Moved Permanently         | Redirigé vers HTTPS.               |
