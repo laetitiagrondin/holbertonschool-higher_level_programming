@@ -38,7 +38,8 @@ class SimpleAPI(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    server_address = ("", 8000)
-    httpd = HTTPServer(server_address, SimpleAPI)
-    print("Server running on http://localhost:8000")
+    PORT = 8000
+    server_address = ("", PORT)
+    httpd = http.server.HTTPServer(server_address, SimpleAPI)
+    print(f"Server running on port {PORT}")
     httpd.serve_forever()
