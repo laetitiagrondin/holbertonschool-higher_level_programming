@@ -10,8 +10,7 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            message = "Hello, this is a simple API!"
-            self.wfile.write(message.encode())
+            self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -22,7 +21,7 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write("OK".encode())
+            self.wfile.write(b"OK".encode())
         elif self.path == "/info":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -34,12 +33,12 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write("Endpoint not found.".encode())
+            self.wfile.write(b"Endpoint not found.".encode())
 
 
 if __name__ == "__main__":
     PORT = 8000
     server_address = ("", PORT)
-    httpd = http.server.HTTPServer(server_address, SimpleAPI)
+    httpd = HTTPServer(server_address, SimpleAPI)
     print(f"Server running on port {PORT}")
     httpd.serve_forever()
