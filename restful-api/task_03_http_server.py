@@ -11,7 +11,7 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             message = "Hello, this is a simple API!"
-            self.wfile.write(message.encode("utf-8"))
+            self.wfile.write(message.encode())
         elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -22,7 +22,7 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write("OK".encode("utf-8"))
+            self.wfile.write("OK".encode())
         elif self.path == "/info":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -34,7 +34,7 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write("Endpoint not found.".encode("utf-8"))
+            self.wfile.write("Endpoint not found.".encode())
 
 
 if __name__ == "__main__":
