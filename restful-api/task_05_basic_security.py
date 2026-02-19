@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import (create_access_token, create_refresh_token,
@@ -41,18 +41,19 @@ def login():
     username = request.json.get("username")
     password = request.json.get("password")
     if not request.is_json:
-        return jsonify({"error: Invalid JSON"}), 400
-    username = data.get("username")
-    password = data.get("password")
+        return jsonify({"error": "Invalid JSON"}), 400
+    username = request.json.get("username")
+    password = request.json.get("password")
     if not username or not password:
-        return jsonify({"Username and password required"}), 400
+        return jsonify({"error": "Username and password required"}), 400
+    user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"Invalid credentials"}), 401
 
 
 @app.route("/jwt-required", methods=["GET"])
 @jwt_required()
-def jwt_required():
+def jwt_protected():
     return jsonify("JWT Auth: Access Granted"), 200
 
 
