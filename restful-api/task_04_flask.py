@@ -34,7 +34,7 @@ def add_user():
     if not request.is_json:
         return jsonify({"error":"Invalid JSON"}), 400
     username = data.get("username")
-    if username not in data:
+    if not username:
         return jsonify({"error":"Username is required"}), 400
     if username in users:
         return jsonify({"error":"Username already exists"}), 409
