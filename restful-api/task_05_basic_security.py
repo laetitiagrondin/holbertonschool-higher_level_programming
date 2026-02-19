@@ -8,7 +8,7 @@ from flask_jwt_extended import (create_access_token,
                                 jwt_required, JWTManager)
 
 app = Flask(__name__)
-app.config["JWT_SECRET_KEY"] = "my_jwt_secret-key"
+app.config["JWT_SECRET_KEY"] = "my_jwt_secret_key"
 
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
@@ -49,8 +49,9 @@ def login():
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
-    access_token = create_access_token(identity=username)
-    return jsonify(access_token=access_token), 200
+    access_token = create_access_token(identity={"username": username,
+                                                 "role": user["role"]})
+    return jsonify("access_token": access_token), 200
 
 
 @app.route("/jwt-required", methods=["GET"])
