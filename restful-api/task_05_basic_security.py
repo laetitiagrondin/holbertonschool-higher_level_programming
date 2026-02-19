@@ -38,16 +38,15 @@ def basic_protected():
 
 
 @app.route("/login", methods=["POST"])
-@auth.login_required
 def login():
     data = request.get_json()
-    if not request.is_json:
+    if data is None:
         return jsonify({"error": "Invalid JSON"}), 400
     username = data.get("username")
     password = data.get("password")
-    user = users.get(username)
     if not username or not password:
         return jsonify({"error": "Username and password required"}), 400
+    user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
     access_token = create_access_token(identity=username)
