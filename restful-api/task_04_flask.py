@@ -30,9 +30,9 @@ def get_user(username):
 
 @app.route("/add_user", methods=["POSTS"])
 def add_user():
+    data = request.get_json()
     if data is None:
         return jsonify({"error":"Invalid JSON"}), 400
-    data = request.get_json()
     username = data.get("username")
     if not username:
         return jsonify({"error":"Username is required"}), 400
