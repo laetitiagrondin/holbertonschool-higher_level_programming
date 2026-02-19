@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+user = {}
+
 
 @app.route("/")
 def home():
@@ -18,18 +20,18 @@ def status():
     return "OK"
 
 
-@app.route("/users/<username>")
+@app.route("/users/<username>", methods=["POSTS"])
 def get_user(username):
-    user = users.get("username")
+    user = users.get(username)
     if user in users:
-        return jsonify(users['username'])
+        return jsonify(users)
     return jsonify({"error": "User not found"}), 404
 
 
 @app.route("/add_user")
 def add_user():
     data = request.get_json()
-    if data is None:
+    if not request.is_json:
         return jsonify({"error":"Invalid JSON"}), 400
     username = data.get("username")
     if username not in data:
