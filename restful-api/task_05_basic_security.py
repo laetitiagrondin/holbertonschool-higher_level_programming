@@ -30,25 +30,23 @@ def basic_protected():
 @auth.verify_password
 def verify_password(username, password):
     if (username in users and
-       check_password_hash(users.get["password"], password)):
+       check_password_hash(user["password"], password)):
         return username
 
 
 @app.route("/login", methods=["POST"])
 @auth.login_required
 def login():
-    data = request.get_json()
-    username = request.json.get("username")
-    password = request.json.get("password")
     if not request.is_json:
         return jsonify({"error": "Invalid JSON"}), 400
+    data = request.get_json()
     username = request.json.get("username")
     password = request.json.get("password")
     if not username or not password:
         return jsonify({"error": "Username and password required"}), 400
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
-        return jsonify({"Invalid credentials"}), 401
+        return jsonify({"error": "Invalid credentials"}), 401
 
 
 @app.route("/jwt-required", methods=["GET"])
