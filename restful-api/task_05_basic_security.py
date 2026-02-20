@@ -44,8 +44,10 @@ def login():
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
-    access_token = create_access_token(identity=username)
-    return "access_token": access_token
+    access_token = create_access_token(identity={
+                                       "role": role,
+                                       "username": username})
+    return jsonify(access_token=access_token)
 
 
 @app.route("/jwt-required")
