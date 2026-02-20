@@ -48,7 +48,7 @@ def login():
     return jsonify(access_token=access_token)
 
 
-@app.route("/jwt-required")
+@app.route("/jwt-protected")
 @jwt_required()
 def jwt_protected():
     return "JWT Auth: Access Granted"
