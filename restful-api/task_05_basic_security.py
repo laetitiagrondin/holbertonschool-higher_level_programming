@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import (create_access_token,
-                                get_jwt_identity,
-                                jwt_required, JWTManager)
+from flask_jwt_extended import (JWTManager, create_access_token,
+                                jwt_required, get_jwt_identity)
 
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "my_jwt_secret_key"
@@ -34,7 +33,7 @@ def verify_password(username, password):
 @app.route("/basic-protected")
 @auth.login_required
 def basic_protected():
-    return jsonify({"Basic Auth": "Access Granted"})
+    return "Basic Auth: Access Granted"
 
 
 @app.route("/login", methods=["POST"])
@@ -52,7 +51,7 @@ def login():
 @app.route("/jwt-required", methods=["GET"])
 @jwt_required()
 def jwt_protected():
-    return jsonify({"JWT Auth: Access Granted"}), 200
+    return "JWT Auth: Access Granted"
 
 
 @app.route("/admin-only")
