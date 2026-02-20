@@ -28,7 +28,7 @@ users = {
 def verify_password(username, password):
     user = users.get(username)
     if user and check_password_hash(user["password"], password):
-        return username
+        return user
 
 
 @app.route("/basic-protected")
@@ -40,8 +40,6 @@ def basic_protected():
 @app.route("/login", methods=["POST"])
 def login():
     data = request.get_json()
-    if data is None:
-        return jsonify({"error": "Invalid JSON"}), 400
     username = data.get("username")
     password = data.get("password")
     if not username or not password:
