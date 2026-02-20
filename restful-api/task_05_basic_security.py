@@ -42,8 +42,6 @@ def login():
     data = request.get_json()
     username = data.get("username")
     password = data.get("password")
-    if not username or not password:
-        return jsonify({"error": "Username and password required"}), 400
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
