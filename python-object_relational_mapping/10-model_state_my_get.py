@@ -10,12 +10,11 @@ from model_state import Base, State
 if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-            sys.argv[1], sys.argv[2], sys.argv[3]), sys.argv[4],
-            pool_pre_ping=True)
-    Session = sessionmaker(bine=engine)
+            sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).filter(
-        State.name == state_name).first()
+        State.name == sys.argv[4]).first()
     if not state:
         print("Not found")
     else:
