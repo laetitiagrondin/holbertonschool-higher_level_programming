@@ -4,6 +4,7 @@
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     """Connect to the DB using command line arguments."""
     db = MySQLdb.connect(
