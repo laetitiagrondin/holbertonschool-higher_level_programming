@@ -18,6 +18,6 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC", (sys.argv[4],))
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        print(row[0])
     cur.close()
     db.close()
