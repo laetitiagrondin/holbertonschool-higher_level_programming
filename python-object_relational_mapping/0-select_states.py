@@ -4,7 +4,7 @@
 import MySQLdb
 import sys
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     """Connect to the DB using command line arguments."""
     db = MySQLdb.connect(
          host="localhost",
@@ -17,10 +17,10 @@ if __name__ = "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
 
-    states = cursor.fetchall()
+    states = cur.fetchall()
 
     for state in states:
         print(state)
 
     cursor.close()
-    db.close();
+    db.close()
