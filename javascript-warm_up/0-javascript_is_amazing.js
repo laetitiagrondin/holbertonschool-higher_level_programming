@@ -3,5 +3,5 @@
 Write a Javascript script that prints "Javascript is amazing"
 */
 
-const MyVar = 'Javascript is amazing';
-console.log(MyVar);
+const myVar = 'Javascript is amazing';
+console.log(myVar);
