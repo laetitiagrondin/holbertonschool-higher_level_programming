@@ -1,0 +1,16 @@
+#!/usr/bin/node
+/* 10-factorial.js
+Write a script that computes ansd prints a factorial
+*/
+
+function factorial (n) {
+    if (isNaN(n) || n == 0 || n == 1) {
+        return 1;
+    }
+    else {
+        return n * factorial(n - 1);
+    }
+}
+
+const num = parseInt(process.argv[2]);
+console.log(factorial(num));
