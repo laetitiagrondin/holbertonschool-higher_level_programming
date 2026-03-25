@@ -18,6 +18,6 @@ def generate_invitations(template, attendees):
             value = attendee.get(key)
             if value is None:
                 value = "N/A"
-            content = content.replace(f"{{{key}}}", str(vaule))
+            content = content.replace(f"{{{key}}}", str(value))
         with open(f"output_{i}.txt", "w") as file:
-            file.wrtie(content)
+            file.write(content)
