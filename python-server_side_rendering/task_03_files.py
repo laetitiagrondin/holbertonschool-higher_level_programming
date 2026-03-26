@@ -50,7 +50,7 @@ def products():
         if not products:
             return render_template('product_display.html', error="Product not found")
         return render_template('product_display.html', products=products)
-    except FileNotFoundError:
+    except FileNotFoundError as e:
         return render_template('product_display.html', error="Product not found")
 
 if __name__ == '__main__':
